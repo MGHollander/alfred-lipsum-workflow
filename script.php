@@ -27,7 +27,7 @@ function characters($count) {
     $word = $lipsum->word();
     $word_length = strlen($word);
 
-    if ($word !== $words_array[$words_count - 1]) {
+    if ($words_count === 0 || $word !== $words_array[$words_count - 1]) {
       $character_count += $word_length + count($words_array);
 
       array_push($words_array, $word);  
