@@ -79,4 +79,8 @@ switch ($type) {
         break;
 }
 
-echo ucfirst($output);
+if ($array) {
+    var_export($output);
+} else {
+    echo $output;
+}
