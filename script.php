@@ -18,7 +18,7 @@ $lipsum = new joshtronic\LoremIpsum();
 $type = $argv[1];
 $length = !empty($argv[2]) ? intval($argv[2]) : 1;
 $tags = !empty($argv[3]) ? explode(',', $argv[3]) : false;
-$array = !empty($argv[4]) ? boolval($argv[4]) : false;
+$array = !empty($argv[4]) ? (bool) filter_var($argv[4], FILTER_VALIDATE_BOOLEAN) : false;
 
 /**
  * Characters
