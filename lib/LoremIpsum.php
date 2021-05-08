@@ -339,7 +339,7 @@ class LoremIpsum
      * @param  string  $delimiter the string to use when calling implode()
      * @return mixed   string or array of generated lorem ipsum text
      */
-    private function output($strings, $tags, $array, $delimiter = ' ')
+    public function output($strings, $tags, $array, $delimiter = ' ')
     {
         if ($tags) {
             if (!is_array($tags)) {
