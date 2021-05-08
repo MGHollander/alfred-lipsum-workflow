@@ -16,9 +16,9 @@ require_once 'lib/LoremIpsum.php';
 $lipsum = new joshtronic\LoremIpsum();
 
 $type = $argv[1];
-$length = $argv[2];
-
-$length = $length ? $length : 1;
+$length = !empty($argv[2]) ? intval($argv[2]) : 1;
+$tags = !empty($argv[3]) ? explode(',', $argv[3]) : false;
+$array = !empty($argv[4]) ? boolval($argv[4]) : false;
 
 /**
  * Characters
@@ -26,10 +26,12 @@ $length = $length ? $length : 1;
  * Generates characters of lorem ipsum.
  *
  * @param integer $count how many characters to generate
+ * @param mixed   $tags  string or array of HTML tags to wrap output with
+ * @param boolean $array whether an array or a string should be returned
  *
  * @return string generated lorem ipsum characters
  */
-function characters($count)
+function characters($count, $tags, $array)
 {
     global $lipsum;
 
@@ -59,7 +61,7 @@ function characters($count)
         $words = substr($words, 0, -1) . substr($lipsum->word(), 0, 1);
     }
 
-    return $words;
+    return $lipsum->output([$words], $tags, $array);
 }
 
 switch ($type) {
