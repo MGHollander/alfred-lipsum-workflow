@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ruleset  name="PHP_CodeSniffer">
+    <description>PHPCS configuration file.</description>
+
+    <!-- Declare PSR-12 coding standard -->
+    <rule  ref="PSR12"/>
+</ruleset>
