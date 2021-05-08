@@ -1,10 +1,10 @@
 <?php
+
 /**
  * Lorem ipsum generator for Alfred
  *
  * PHP version 7
  *
- * @category Alfred
  * @package  AlfredLipsumWorkflow
  * @author   Marc Hollander <marchollander@gmail.com>
  * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
@@ -63,18 +63,18 @@ function characters($count)
 }
 
 switch ($type) {
-case 'characters':
-        $output = characters($length);
-    break;
-case 'words':
-        $output = $lipsum->words($length);
-    break;
-case 'sentences':
-        $output = $lipsum->sentences($length);
-    break;
-case 'paragraphs':
-        $output = $lipsum->paragraphs($length);
-    break;
+    case 'characters':
+            $output = characters($length, $tags, $array);
+        break;
+    case 'words':
+            $output = $lipsum->words($length, $tags, $array);
+        break;
+    case 'sentences':
+            $output = $lipsum->sentences($length, $tags, $array);
+        break;
+    case 'paragraphs':
+            $output = $lipsum->paragraphs($length, $tags, $array);
+        break;
 }
 
 echo ucfirst($output);
