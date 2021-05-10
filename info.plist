@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.alexchantastic.loremipsum</string>
+	<string>nl.mghollander.loremipsum</string>
 	<key>category</key>
-	<string>Productivity</string>
+	<string>Tools</string>
 	<key>connections</key>
 	<dict>
 		<key>1029C7B6-DB95-4448-B3C5-C33F3DA0F894</key>
@@ -114,7 +114,7 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string>Alex Chan</string>
+	<string>Marc Hollander</string>
 	<key>description</key>
 	<string>Generate dummy lorem ipsum text.</string>
 	<key>disabled</key>
@@ -131,9 +131,13 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>php -f script.php "characters" "{query}"</string>
+				<string>length=$1
+tags=$2
+array=$3
+
+php -f script.php characters $length $tags $array</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
@@ -153,6 +157,8 @@
 				<true/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
 				<key>transient</key>
 				<false/>
 			</dict>
@@ -161,7 +167,7 @@
 			<key>uid</key>
 			<string>125F91DD-9720-45BD-9F14-08966CFC2643</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -169,9 +175,9 @@
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>keyword</key>
-				<string>lipsum</string>
+				<string>lip</string>
 				<key>subtext</key>
-				<string>Generate {query} characters</string>
+				<string></string>
 				<key>text</key>
 				<string>Characters</string>
 				<key>withspace</key>
@@ -190,9 +196,9 @@
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>keyword</key>
-				<string>lipsum</string>
+				<string>lip</string>
 				<key>subtext</key>
-				<string>Generate {query} words</string>
+				<string></string>
 				<key>text</key>
 				<string>Words</string>
 				<key>withspace</key>
@@ -213,9 +219,13 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>php -f script.php "words" "{query}"</string>
+				<string>length=$1
+tags=$2
+array=$3
+
+php -f script.php words $length $tags $array</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
@@ -231,14 +241,39 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>lip</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Sentences</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>1029C7B6-DB95-4448-B3C5-C33F3DA0F894</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>php -f script.php "sentences" "{query}"</string>
+				<string>length=$1
+tags=$2
+array=$3
+
+php -f script.php sentences $length $tags $array</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
@@ -257,30 +292,9 @@
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>keyword</key>
-				<string>lipsum</string>
+				<string>lip</string>
 				<key>subtext</key>
-				<string>Generate {query} sentences</string>
-				<key>text</key>
-				<string>Sentences</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>1029C7B6-DB95-4448-B3C5-C33F3DA0F894</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>keyword</key>
-				<string>lipsum</string>
-				<key>subtext</key>
-				<string>Generate {query} paragraphs</string>
+				<string></string>
 				<key>text</key>
 				<string>Paragraphs</string>
 				<key>withspace</key>
@@ -301,9 +315,13 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>php -f script.php "paragraphs" "{query}"</string>
+				<string>length=$1
+tags=$2
+array=$3
+
+php -f script.php paragraphs $length $tags $array</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
@@ -318,7 +336,7 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>An Alfred 3 workflow for generating lorem ipsum dummy text using joshtronic/php-loremipsum.</string>
+	<string>An Alfred 4 workflow for generating lorem ipsum dummy text using joshtronic/php-loremipsum.</string>
 	<key>uidata</key>
 	<dict>
 		<key>1029C7B6-DB95-4448-B3C5-C33F3DA0F894</key>
@@ -361,7 +379,7 @@
 			<key>xpos</key>
 			<integer>120</integer>
 			<key>ypos</key>
-			<integer>370</integer>
+			<integer>365</integer>
 		</dict>
 		<key>BACA329C-E588-479B-9FDC-35863B7E37F6</key>
 		<dict>
@@ -386,8 +404,8 @@
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>2.2.0</string>
+	<string>1.0.0</string>
 	<key>webaddress</key>
-	<string>https://github.com/alexchantastic/alfred-lipsum-workflow</string>
+	<string>https://github.com/MGHollander/alfred-lipsum-workflow</string>
 </dict>
 </plist>
