@@ -5,20 +5,28 @@
  *
  * PHP version 7
  *
- * @package  AlfredLipsumWorkflow
- * @author   Marc Hollander <marchollander@gmail.com>
+ * @package AlfredLipsumWorkflow
+ * @author  Marc Hollander <marc@mghollander.nl>
  * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
- * @link     https://github.com/MGHollander/alfred-lipsum-workflow
+ * @link    https://github.com/MGHollander/alfred-lipsum-workflow
  */
 
 require_once 'lib/LoremIpsum.php';
 
 $lipsum = new joshtronic\LoremIpsum();
 
-$type = $argv[1];
-$length = !empty($argv[2]) ? intval($argv[2]) : 1;
-$tags = (!empty($argv[3]) && $argv[3] != 'false' && $argv[3] != '0') ? explode(',', $argv[3]) : false;
-$array = !empty($argv[4]) ? (bool) filter_var($argv[4], FILTER_VALIDATE_BOOLEAN) : false;
+$params = $params ?? null;
+$type = $type ?? 'paragraph';
+$length = $params[0] ?? 1;
+if ($type === 'characters' && empty($params[0])) {
+    $length = 10;
+}
+$tags = (isset($params[1]) && $params[1] != 'false' && $params[1] != '0')
+    ? explode(',', $params[1])
+    : false;
+$array = isset($params[2])
+    ? filter_var($params[2], FILTER_VALIDATE_BOOLEAN)
+    : false;
 
 /**
  * Characters
