@@ -24,9 +24,9 @@ There are multiple options to enhance the output.
 
 | Option | Usage | Description |
 | --- | --- | --- |
-| length (default is 1) | `lip 5` | Generates 5 instances of the format you have chosen |
-| tags (default is no tags) | `lip 5 p` | Generates 5 instances of the format you have chosen and wraps each instance in a [<p> tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p). You can wrap an instance in multiple tags by comma separating the tags like `lip 5 div,p`. |
-| array (default is false) | `lip 5 p true` | Generates 5 instances of the format you have chosen, wraps each instance in a [<p> tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p) and outputs it as a PHP array with a value for each instance. You can set the tags to `false` or `0` if you do not want to wrap the output into tags. |
+| length | `lip 5` | **Default: 1**<br>Generates 5 instances of the format you have chosen |
+| tags | `lip 5 p` | **Default: no tags**<br>Generates 5 instances of the format you have chosen and wraps each instance in a [<p> tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p). You can wrap an instance in multiple tags by comma separating the tags like `lip 5 div,p`. |
+| array | `lip 5 p true` | **Default: false**<br>Generates 5 instances of the format you have chosen, wraps each instance in a [<p> tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p) and outputs it as a PHP array with a value for each instance. You can set the tags to `false` or `0` if you do not want to wrap the output into tags. |
 
 ## Developer notes
 
