@@ -7,7 +7,7 @@
  *
  * @package AlfredLipsumWorkflow
  * @author  Marc Hollander <marc@mghollander.nl>
- * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @license https://mit-license.org/ MIT License
  * @link    https://github.com/MGHollander/alfred-lipsum-workflow
  */
 
