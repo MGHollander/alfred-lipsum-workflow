@@ -6,10 +6,12 @@ An [Alfred 4](https://www.alfredapp.com/) workflow for generating [lorem ipsum](
 
 ## Installation
 
-1. [Download the workflow](https://github.com/MGHollander/alfred-lipsum-workflow/releases/latest)
-2. Double click the `.alfredworkflow` file to install
+[Alfred Powerpack](https://www.alfredapp.com/powerpack/) is required to use workflows.
 
-Note that the [Alfred Powerpack](https://www.alfredapp.com/powerpack/) is required to use workflows.
+PHP is no longer supported out of the box since MacOS Monterey. Therefore you need to install PHP 7 or above, for example via [Homebrew](https://brew.sh/).
+
+1. [Download the workflow](https://github.com/MGHollander/alfred-lipsum-workflow/releases/latest).
+2. Double click the `.alfredworkflow` file to install.
 
 ## Usage
 
@@ -24,9 +26,9 @@ There are multiple options to enhance the output.
 
 | Option | Usage | Description |
 | --- | --- | --- |
-| length | `lip 5` | **Default: 1**<br>Generates 5 instances of the format you have chosen |
-| tags | `lip 5 p` | **Default: no tags**<br>Generates 5 instances of the format you have chosen and wraps each instance in a [<p> tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p). You can wrap an instance in multiple tags by comma separating the tags like `lip 5 div,p`. |
-| array | `lip 5 p true` | **Default: false**<br>Generates 5 instances of the format you have chosen, wraps each instance in a [<p> tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p) and outputs it as a PHP array with a value for each instance. You can set the tags to `false` or `0` if you do not want to wrap the output into tags. |
+| length | `lip 5` | **Default: 1 (10 for characters)**<br>Generates 5 instances of the format you have chosen |
+| tags | `lip 5 p` | **Default: false**<br>Generates 5 instances of the format you have chosen and wraps each instance in a [p tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p). You can wrap an instance in multiple tags by comma separating the tags like `lip 5 div,p`. Use `false` or `0` if you want to skip this option, but would like the next option. |
+| array | `lip 5 p true` | **Default: false**<br>Generates 5 instances of the format you have chosen, wraps each instance in a [p tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p) and outputs it as a PHP array with a value for each instance. |
 
 ## Developer notes
 
@@ -46,4 +48,5 @@ I work on this extension in my free time, but you can support me by making a don
 
 ## Credits
 
-Forked from [alexchantastic/alfred-lipsum-workflow](https://github.com/alexchantastic/alfred-lipsum-workflow)
+- Forked from [alexchantastic/alfred-lipsum-workflow](https://github.com/alexchantastic/alfred-lipsum-workflow)
+- Thanks to [joshtronic/php-loremipsum](https://github.com/joshtronic/php-loremipsum)
